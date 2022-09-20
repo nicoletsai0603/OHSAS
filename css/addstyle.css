@@ -1,0 +1,801 @@
+       /* 大框架修改 */
+       
+       .flex_fullbf {
+           display: flex;
+           width: 100%;
+       }
+       
+       .majorization {
+           background-color: white;
+           padding: 15px !important;
+           border-radius: 10px;
+           margin: 5px;
+       }
+       
+       @media (min-width: 996px) {
+           body #main .row-box.change {
+               height: auto;
+               display: grid;
+               grid-template-columns: 60% 40%;
+           }
+           body #main .row-box.change .main_box_left {
+               padding-left: 1.65%;
+               margin-left: -1.65%;
+               width: unset;
+           }
+           body #main .row-box.change .sub_height3.majorization {
+               height: auto;
+               overflow-x: unset;
+           }
+           body #main .row-box.change .majorization.sub_height4 {
+               height: unset;
+           }
+           body #main .row-box.change .main_box .sub_box {
+               padding: 15px;
+           }
+           body #main .row-box.change .main_box_right {
+               width: unset;
+           }
+       }
+       
+       @media (max-width: 996px) {
+           body #main .row-box.change {
+               display: block;
+           }
+       }
+       
+       @media (max-width: 995px) {
+           body #main .row-box.change .sub_height2.majorization {
+               height: unset;
+           }
+       }
+       
+       @media (max-width:600px) {
+           body #main .row-box.change .sub_row6,
+           body #main .row-box.change .sub_row4 {
+               width: 100%;
+           }
+           .flex_fullbf {
+               flex-wrap: wrap;
+           }
+           body .content_box {
+               flex-direction: column;
+           }
+       }
+       
+       .majorization .BizUnitReport_box_h7 {
+           height: unset;
+       }
+       
+       .majorization .BizUnitReport_box_h10 {
+           height: unset;
+       }
+       /* 基本資料 */
+       
+       body #main .row-box.change .main_box .sub_box.majorization .content_box {
+           border: none;
+           height: unset;
+       }
+       
+       body #main .row-box.change .main_box .sub_box.majorization .content_title {
+           background: #27a6eb;
+           color: #fff;
+           padding: 15px 10px;
+           border-radius: 10px;
+           font-weight: bold;
+           text-align: center;
+           margin-bottom: 15px;
+           font-size: 25px !important;
+       }
+       
+       .majorization .BasicInfo_Warp {
+           grid-template-columns: 0 0.7fr 1.3fr 0;
+           overflow: unset;
+           font-size: 18px;
+       }
+       
+       .majorization .BasicInfo_Warp_data {
+           border: solid #fff 1px;
+           padding: 5px 10px;
+       }
+       
+       .majorization .BasicInfo_Warp_title {
+           border: solid #fff 1px;
+           padding: 5px 10px;
+           background-color: #8adbf5;
+           color: #00679f;
+       }
+       /*勞工資料*/
+       
+       .majorization .LabourInfo_Warp {
+           grid-template-columns: 1fr 1fr;
+           grid-template-rows: 0.8fr repeat(2, 1fr) 0.8fr 0.8fr repeat(2, 1fr);
+           align-items: center;
+           height: auto;
+           font-size: 18px;
+       }
+       
+       .majorization .country_title {
+           color: #0383c8;
+           font-weight: bold;
+           grid-column: 1/-1;
+           padding: 0 10px 10px;
+           border-bottom: #27a6eb 2px solid;
+       }
+       
+       .majorization .line {
+           border-bottom: lightblue 1px solid;
+           padding: 10px;
+       }
+       
+       .majorization .line.number_workers {
+           background-image: linear-gradient(135deg, rgb(253, 110, 106) 10%, rgb(255, 198, 0) 100%);
+           background-clip: text;
+           -webkit-background-clip: text;
+           color: transparent;
+           font-weight: 900;
+       }
+       
+       @media (max-width: 995px) {
+           body #main .row-box.change .sub_height3 {
+               height: auto;
+           }
+       }
+       /*事業單位認證項目*/
+       
+       .majorization p.BizUnitCertificationProject_tilte {
+           font-size: 18px !important;
+       }
+       
+       @media only screen and (min-width: 0px) and (max-width: 995px) {
+           .majorization .SubItem_Style_20>p {
+               font-size: 18px;
+           }
+       }
+       
+       .majorization .BizUnitCertificationProject_box_h5,
+       .majorization .BizUnitCertificationProject_box_h10 {
+           border: none;
+           padding: 15px;
+       }
+       
+       .majorization .BizUnitCertificationProject_box_h5 {
+           height: unset;
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization .BizUnitCertificationProject_square {
+               padding: 15px;
+           }
+       }
+       
+       .majorization #BizUnitCertificationProject_SubBox_TOSHMS {
+           border-top-left-radius: 0;
+           border-top-right-radius: 0;
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization hr.style {
+               margin: 5px 0;
+           }
+       }
+       
+       p.BizUnitCertificationProject_tilte {
+           color: #27a6eb
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .BizUnitCertificationProject_subItem>p {
+               margin-right: unset;
+           }
+       }
+       /* 事業單位認證項目按鈕 */
+       
+       .majorization .BizUnitCertificationProject_square {
+           border: none;
+       }
+       
+       .majorization .BizUnitCertificationProject_square.BizUnitCertificationProject_active .BizUnitCertificationProject_txt {
+           color: #ffffff;
+       }
+       
+       .majorization .BizUnitCertificationProject_square button.BizUnitCertificationProject_txt {
+           padding: 8px 15px;
+           color: #0383c8;
+           width: 100%;
+           border: solid 1px #27a6eb;
+           font-weight: 700;
+           margin: auto;
+           border-radius: 6px;
+           transition: all 0.3s;
+           font-size: 20px;
+       }
+       
+       .majorization .BizUnitCertificationProject_square button.BizUnitCertificationProject_txt:hover {
+           color: #fff;
+           background-color: #0383c8;
+           transition: all 0.3s;
+       }
+       
+       .majorization .BizUnitCertificationProject_square.BizUnitCertificationProject_active button.BizUnitCertificationProject_txt {
+           background-color: #0383c8;
+           border: none;
+       }
+       /*事業單位作業人員報備*/
+       
+       .majorization .BizUnitWorkerReport_box_h5,
+       .majorization .BizUnitWorkerReport_box_h10 {
+           border: none;
+           padding: 15px;
+           border-radius: 10px;
+       }
+       
+       .majorization .BizUnitWorkerReport_box_h5 {
+           height: unset;
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization .BizUnitWorkerReport_block_space {
+               display: none;
+           }
+       }
+       
+       .majorization .BizUnitWorkerReport_Warp {
+           margin: 0 0.5vw;
+           padding: 0;
+           display: flex;
+           justify-content: space-between;
+           height: auto;
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization .BizUnitWorkerReport_txt {
+               position: relative;
+               transform: unset;
+               top: unset;
+               color: #0383c8;
+           }
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization .BizUnitWorkerReport_square {
+               width: 100%;
+               border: solid 1px #27a6eb;
+               padding: 10px;
+           }
+       }
+       
+       @media (max-width: 995px) {
+           body #main .row-box.change .sub_height1 {
+               height: unset;
+           }
+       }
+       
+       .majorization .BizUnitWorkerReport_SubBox_Warp_Safty,
+       .majorization .BizUnitWorkerReport_SubBox_Warp_SpotStrain {
+           grid-template-rows: repeat(4, 1fr);
+           grid-template-columns: 0 1fr 1fr 0;
+           height: 100%;
+           width: 100%;
+       }
+       
+       .majorization #BizUnitWorkerReport_SubBox_Safty,
+       .majorization #BizUnitWorkerReport_SubBox_SpotStrain {
+           padding-top: 10px;
+           margin-top: -15px;
+       }
+       
+       .majorization .BizUnitWorkerReport_Warp_title {
+           border: solid #fff 1px;
+           padding: 5px 10px;
+           background-color: #8adbf5;
+           color: #00679f;
+           font-weight: 600;
+       }
+       
+       .majorization .BizUnitWorkerReport_Warp_data {
+           border: solid #fff 1px;
+           font-weight: 400;
+           padding: 5px 10px;
+           background-color: #ecf0f1;
+       }
+       /* 事業單位作業人員報備按鈕 */
+       
+       .majorization .BizUnitWorkerReport_square.BizUnitWorkerReport_active {
+           background-color: #0383c8;
+           border: none;
+       }
+       
+       .majorization .BizUnitWorkerReport_square.BizUnitWorkerReport_active .BizUnitWorkerReport_txt {
+           color: #ffffff;
+       }
+       /* 事業單位報備資料 */
+       
+       .majorization .BizUnitReport_box_h3 {
+           height: unset;
+       }
+       
+       .majorization .BizUnitReport_box_h3,
+       .majorization .BizUnitReport_Sub_Box_left,
+       .majorization .BizUnitReport_Sub_Box_right,
+       .majorization .BizUnitReport_box_h10 {
+           border: none;
+           padding: 15px;
+           border-radius: 10px;
+           background-color: #fff;
+       }
+       
+       @media (max-width: 995px) {
+           body #main .row-box.change .majorization.sub_height4 {
+               height: 100%;
+           }
+       }
+       
+       .majorization .BizUnitReport_style {
+           border: none;
+           margin-top: -15px;
+           background-color: transparent !important;
+       }
+       /* 事業單位報備資料 按鈕*/
+       
+       .majorization .BizUnitReport_square.BizUnitReport_active {
+           background-color: #0383c8;
+           border: none;
+       }
+       
+       .majorization .BizUnitReport_square.BizUnitReport_active .BizUnitReport_txt {
+           color: #ffffff;
+           padding: 10px;
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization .BizUnitReport_square {
+               width: 90%;
+               border: solid 1px #27a6eb;
+               font-weight: 700;
+               margin: auto;
+           }
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization .BizUnitReport_txt {
+               position: unset;
+               top: unset;
+               transform: unset;
+               color: #0383c8;
+               padding: 10px;
+           }
+       }
+       /*事業單位報備資料 工作守則報備表格 */
+       
+       .majorization .WorkRules_SubBizUnitReport_TitleStyle,
+       .majorization .WorkRules_SubBizUnitReport_BoxStyle {
+           border: none !important;
+       }
+       
+       .majorization .WorkRules_SubBizUnitReport_ContentStyle {
+           border-top: solid 1px #fff !important;
+           border-left: solid 1px #fff !important;
+           border-right: solid 1px #fff !important;
+           padding: 10px;
+           color: #fff;
+       }
+       
+       .majorization .WorkRules_SubBizUnitReport_BoxStyle .WorkRules_SubBizUnitReport_ContentStyle {
+           background-color: #ecf0f1;
+           padding: 10px;
+           color: #000;
+       }
+       
+       body #main .row-box.change .main_box .sub_box.majorization .content_title100 {
+           background-color: #b4e2f9;
+           color: #0383c8;
+           border-radius: 10px;
+           font-weight: bold;
+           text-align: center;
+           width: 95%;
+           margin: auto;
+       }
+       /*事業單位報備資料 危險性工作場所類別表格 */
+       
+       .majorization .DangerousWorkPlace_ContentStyle.DangerousWorkPlace_Content_TitleStyle {
+           border: solid 1px #fff;
+           background-color: rgba(91, 155, 213, 1);
+           color: #fff;
+           font-weight: 900;
+       }
+       
+       .majorization .DangerousWorkPlace_ContentStyle {
+           border: solid 1px #fff;
+           background-color: #ecf0f1;
+       }
+       /*事業單位報備資料 危險性工作場所危險物質按鈕 */
+       
+       .majorization .Dangerousbtn {
+           display: block;
+           cursor: pointer;
+           background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+           color: #fff;
+           padding: 3px 10px;
+           border-radius: 10px;
+           transition: all 0.3s;
+           font-size: 1.6vw;
+       }
+       
+       .majorization .Dangerousbtn:hover {
+           background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+           transition: all 0.3s;
+       }
+       
+       .majorization .Dangerousbtn i {
+           margin-right: 10px;
+       }
+       /*事業單位報備資料 危險性機械設備 */
+       
+       @media only screen and (min-width: 0px) and (max-width: 995px) {
+           .DangerousEquipment_IconStyle {
+               border: none;
+           }
+       }
+       
+       @media only screen and (min-width: 996px) {
+           .majorization .DangerousEquipment_SubTitle {
+               line-height: 1vw;
+               padding: 0 10px;
+               color: rgb(3, 86, 194);
+           }
+       }
+       
+       body #main .row-box.change .majorization .DangerousEquipment_SubBoxStyle img {
+           -webkit-filter: invert(1);
+           filter: invert(1);
+       }
+       
+       body #main .row-box.change .majorization .content_Unselected {
+           background: linear-gradient(to bottom, #d9d9d9, #999999);
+           border: 1px solid #a8a8a8;
+           opacity: 0.3;
+           color: #fff;
+       }
+       
+       .majorization .onclick {
+           background-image: linear-gradient(135deg, rgb(60, 140, 231) 10%, rgb(0, 234, 255) 100%);
+           border: solid 1px #27a6eb;
+       }
+       
+       .majorization .DangerousEquipment_ImgStyle .onclick {
+           border-radius: 8px;
+           background-image: linear-gradient(135deg, rgb(42, 250, 223) 10%, rgb(76, 131, 255) 100%);
+           position: relative;
+           display: block;
+           transition: all 0.3s;
+       }
+       
+       .majorization .DangerousEquipment_ImgStyle .onclick:hover {
+           background: rgb(76, 131, 255);
+           transition: all 0.3s;
+       }
+       
+       .DangerousEquipment_ImgStyle {
+           padding: 10px;
+       }
+       /*事業單位報備資料 機械設備報備按鈕 */
+       
+       .DangerousEquipment_b {
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+       }
+       
+       .DangerousEquipment_b>div {
+           flex-grow: 1;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           height: -webkit-fill-available;
+       }
+       
+       .DangerousEquipment_b>div>div {
+           display: flex;
+           height: -webkit-fill-available;
+           padding: 2px 5px;
+       }
+       
+       @media only screen and (min-width: 0px) and (max-width: 995px) {
+           .DangerousEquipment_IconStyle {
+               height: 100%;
+               width: 100%;
+           }
+       }
+       
+       .majorization .DangerousEquipment_SubBoxStyle {
+           margin: 3px 0;
+       }
+       
+       .majorization .DangerousEquipment_SubBoxStyle .onclick {
+           border-radius: 8px;
+           background-image: linear-gradient(135deg, rgb(42, 250, 223) 10%, rgb(76, 131, 255) 100%);
+           position: relative;
+           display: block;
+           transition: all 0.3s;
+       }
+       
+       .majorization .DangerousEquipment_IconStyle {
+           -webkit-filter: invert(1);
+           filter: invert(1);
+       }
+       
+       .majorization .DangerousEquipment_SubBoxStyle .onclick:hover {
+           background: rgb(76, 131, 255);
+           transition: all 0.3s;
+       }
+       /*勞動檢查資訊*/
+       
+       .majorization .LabourCheckInfo_sub_box {
+           height: unset;
+       }
+       
+       body #main .row-box.change .main_box .sub_box.majorization .content_title.activity {
+           background-color: #27a6eb;
+       }
+       
+       body #main .row-box.change .main_box .sub_box.majorization .content_title.activity a {
+           color: #fff;
+       }
+       
+       .majorization .red {
+           background-image: linear-gradient(135deg, rgb(253, 110, 106) 10%, rgb(255, 198, 0) 100%);
+           background-clip: text;
+           -webkit-background-clip: text;
+           color: transparent;
+       }
+       /*勞動檢查資訊 前五大違反法條*/
+       
+       body #main .row-box.change .main_box .sub_box.majorization .content_sub_title {
+           font-weight: bold;
+           color: #2c88ca;
+           margin-top: 0;
+           text-align: center;
+           font-size: 18px;
+           line-height: 18px;
+           padding: 10px 20px;
+       }
+       /*勞動檢查資訊 前五大違反法條表格*/
+       
+       .majorization .LabourCheckInfo_Warp_title {
+           background-color: rgba(91, 155, 213, 1);
+           color: #fff;
+           border: solid 1px #fff;
+           padding: 5px;
+       }
+       
+       .majorization .LabourCheckInfo_Warp_con,
+       .majorization .LabourCheckInfo_Warp_no {
+           border: solid 1px #fff;
+           padding: 5px;
+           background-color: #ecf0f1;
+           text-align: center;
+       }
+       /* 職業災害資訊 600px*/
+       
+       @media (max-width:600px) {
+           .majorization .OccupationalAccident_sub_box_left,
+           .majorization .OccupationalAccident_sub_box_right {
+               width: 100%;
+               margin: 20px 0;
+           }
+       }
+       /* 職業災害資訊 圖表設定*/
+       
+       .occupational_disaster .OccupationalAccident_sub_box_right {
+           height: unset;
+       }
+       
+       body #main .row-box.change .main_box .sub_box.majorization .disaster_resources_b {
+           background: none;
+       }
+       
+       .disaster_resources {
+           background-color: #27a6eb;
+           color: #fff;
+           width: 100%;
+           display: flex;
+           justify-content: center;
+           border-radius: 10px;
+           font-weight: bold;
+           text-align: center;
+           padding: 0.4vw !important;
+       }
+       
+       .disaster_resources a {
+           color: #fff;
+       }
+       
+       .disaster_resources a:hover {
+           color: #fff;
+       }
+       /* 職業災害資訊 按鈕*/
+       
+       .majorization .tab button.tablinks.active {
+           background-color: #0383c8;
+           color: #fff;
+       }
+       
+       .majorization .tab button.tablinks {
+           border: solid 1px #27a6eb;
+           margin: 0 3px;
+           width: calc(33% - 6px);
+           padding: 5px 10px;
+           border-radius: 6px;
+           color: #0383c8;
+       }
+       
+       .majorization .tab button:hover {
+           background-color: #0383c8;
+           color: #fff;
+       }
+       /*地理資訊*/
+       
+       .majorization #mapid {
+           width: 100%;
+           height: 400px;
+       }
+       /*化學品使用情況 大框設定*/
+       
+       @media (min-width: 996px) {
+           body #main .row-box.change .sub_height5 {
+               height: auto;
+           }
+       }
+       /*化學品使用情況表格設定*/
+       
+       .majorization .ChemicalInfo_Warp {
+           grid-template-rows: repeat(2, 1fr);
+           grid-template-columns: 50px 1fr;
+           align-items: center;
+           height: auto;
+       }
+       
+       .majorization .ChemicalInfo_no {
+           border: solid #fff 1px;
+           padding: 5px 10px;
+           background-color: #8adbf5;
+           color: #00679f;
+       }
+       
+       .majorization .ChemicalInfo_txt {
+           text-align: center;
+           padding: 5px 10px;
+           border: solid #fff 1px;
+           background-color: #ecf0f1;
+       }
+       /*化學品使用情況 標題設定*/
+       
+       .majorization .content_sub_title.Chemical {
+           margin-top: 5px;
+       }
+       
+       .majorization a.Chemicals {
+           color: #2c88ca;
+           text-align: center;
+       }
+       /*化學品使用情況 甲乙丙丁*/
+       
+       .majorization .ChemicalsUsedSituation_Warp {
+           justify-content: center;
+       }
+       
+       .majorization .ChemicalsUsedSituation_block {
+           justify-content: center;
+       }
+       
+       .majorization .ChemicalsUsedSituation_square {
+           background-image: linear-gradient(135deg, rgb(42, 250, 223) 10%, rgb(76, 131, 255) 100%);
+           color: #fff;
+           border: none;
+       }
+       /* 作業環境監測 */
+       
+       .majorization .environment_monitoring a {
+           color: #fff;
+       }
+       
+       @media (min-width: 996px) {
+           body #main .row-box.change .majorization.sub_height1 {
+               height: auto;
+           }
+       }
+       
+       .majorization .WorkplaceMonitoring_Warp {
+           margin-left: 0;
+           margin-right: 0;
+           padding: 0;
+           height: unset;
+       }
+       
+       .majorization .owl-dots {
+           display: none;
+       }
+       /* 作業環境監測 表格設定*/
+       
+       .majorization .monitor_title {
+           border: solid #fff 1px;
+           padding: 10px 0;
+           background-color: #8adbf5;
+           color: #00679f;
+       }
+       
+       .majorization .no-js .owl-carousel,
+       .owl-carousel.owl-loaded {
+           display: grid;
+       }
+       
+       .majorization .owl-carousel.owl-drag .owl-item {
+           width: 100%;
+       }
+       
+       .majorization .WorkplaceMonitoring_Warp_owl {
+           grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+           margin-left: 0;
+           margin-right: 0;
+           padding: 0;
+       }
+       
+       .majorization .WorkplaceMonitoring_Warp_owl>div {
+           border: solid 1px #fff;
+           padding: 10px 0;
+           background-color: #ecf0f1;
+           text-align: center;
+       }
+       /* 特殊危害作業 */
+       
+       @media (min-width: 996px) {
+           body #main .majorization.sub_height2 {
+               height: auto;
+           }
+       }
+       
+       .majorization .SpecHarmWork_sub_box .content_sub_title {
+           width: 100%;
+       }
+       
+       .majorization .SpecHarmWork_sub_box .content_sub_title a {
+           background-color: #27a6eb;
+           padding: 15px;
+           border-radius: 10px;
+           color: #fff;
+           line-height: 25px;
+           font-size: 25px;
+       }
+       /*職業摘害統計內頁*/
+       
+       @media (min-width: 996px) {
+           .inside_html .main_box_top_subBox.blue {
+               background: #27a6eb;
+               color: #fff;
+               padding: 15px 10px;
+               border-radius: 10px;
+               font-weight: bold;
+               text-align: center;
+               margin-bottom: 15px;
+           }
+       }
+       
+       body .body .inner-wrapper .row-box.change.inside_html .main_box_bottom .main_box_bottom_subBox {
+           border: none;
+       }
+       
+       body .inside_html .select select {
+           border: none !important;
+       }
+       /*職業摘害統計內頁 圖表標題 */
+       
+       .inside_html .main_box_bottom_subTitle {
+           color: #27a6eb;
+       }
+       /*職業摘害統計內頁 請選擇的分隔線*/
+       
+       .inside_html .divider {
+           font-size: 3em;
+           margin: 0 10px;
+       }

@@ -1,0 +1,73 @@
+﻿function page(p) {
+    var url = location.href.replace(/[?&]{1}page=[^&;]*/, '');
+    location.href = url + (url.indexOf('?') !== -1 ? "&" : "?") + "page=" + p;
+}
+
+
+/* Loading */
+var PageLoading = {
+	On: function () {
+		var $el = $('.LoadingOverlayApi');
+		$('.loadingOverlayCanvas').show();
+		$el.trigger('loading-overlay:show');
+	},
+	Off: function () {
+		var $el = $('.LoadingOverlayApi');
+		$el.trigger('loading-overlay:hide');
+		$('.loadingOverlayCanvas').hide();
+	}
+};
+
+
+var SectionLoading = {
+	On: function (ctrlId) {
+		var $el = $('#' + ctrlId);
+		$el.trigger('loading-overlay:show');
+		//$el.LoadingOverlay("show");
+	},
+	Off: function (ctrlId) {
+		var $el = $('#' + ctrlId);
+		$el.trigger('loading-overlay:hide');
+		//$el.LoadingOverlay("hide");
+	}
+};
+
+
+(function ($) {
+
+	'use strict';
+
+	$(function () {
+
+		var $el = $('.LoadingOverlayApi');
+
+		$('.ApiShowOverlay').click(function () {
+			$('.loadingOverlayCanvas').show();
+			$el.trigger('loading-overlay:show');
+		});
+
+		// to hide the overlay on previously initialized element
+		// just trigger the following event
+		$('.ApiHideOverlay').click(function () {
+			$el.trigger('loading-overlay:hide');
+			$('.loadingOverlayCanvas').hide();
+		});
+
+		// You can also initialize by yourself, like:
+		//$('.el').loadingOverlay({
+		// ... your options
+		//});
+
+		// available options via data-overlay-options or passing object via javascript initialization
+		//{
+		//	"startShowing": true | false, // defaults to false
+		//	"hideOnWindowLoad": true | false, // defaults to false
+		//	"css": {} // object container css stuff, defaults to match backgroundColor and border-radius
+		//}
+
+		// note: the loader color is black or white based on color contrast,
+		// this is done automatically if you does not supply the html,
+		// otherwise you need to the class dark or light to the loader element
+	});
+
+}).apply(this, [jQuery]);

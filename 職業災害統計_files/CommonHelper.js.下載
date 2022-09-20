@@ -1,0 +1,245 @@
+﻿var AjaxHelper = (function () {
+    /**
+     * 錯誤處理
+     */
+    let DefaultErrorCtrl = function (_errors) {
+        var _msg = [];
+        if (Array.isArray(_errors)) {
+            _msg = _errors;
+        } else {
+            for (let i in _errors) {
+                _msg.push(_errors[i].map(function (x) {
+                    if (x.indexOf('Could not convert string to DateTime') < 0) return x;
+                    return "日期資料格式輸入錯誤";
+                }).join("、"));
+            }
+        }
+        UiHelper.ShowErr(_msg);
+    };
+
+    return {
+        postProto: function (_cfg) {
+            UiHelper.blockUI();
+            UiHelper.ClearMsg();
+            $.ajax({
+                url: _cfg.url,
+                headers: { 'X-CSRF-TOKEN': $('input:hidden[name="__RequestVerificationToken"]').val() },
+                data: _cfg.data,
+                type: 'post',
+                cache: false,
+                async: true,
+                success: function (response) {
+                    var _Result = response;
+                    UiHelper.unblockUI();
+                    if (_cfg.success) {
+                        _cfg.success(_Result);
+
+                    }
+                },
+                error: function (xhr) {
+                    UiHelper.unblockUI();
+                    if (xhr.status == 401) { UiHelper.ShowErr('帳號登入已逾時，請重新登入系統'); }
+                    else {
+                        UiHelper.alert('服務呼叫失敗,錯誤代碼' + xhr.status);
+                    }
+                }
+            });
+
+
+        },
+        post: function (_cfg) {
+            UiHelper.ClearMsg();
+            $.ajax({
+                url: _cfg.url,
+                headers: { 'X-CSRF-TOKEN': $('input:hidden[name="__RequestVerificationToken"]').val() },
+                data: _cfg.data,
+                type: 'post',
+                cache: false,
+                async: true,
+                success: function (response) {
+                    var _Result = response;
+                    if (_cfg.success) {
+                        _cfg.success(_Result);
+
+                    }
+                },
+                error: function (xhr) {
+                    
+                    if (xhr.status == 401) { UiHelper.ShowErr('帳號登入已逾時，請重新登入系統'); }
+                    else {
+                        UiHelper.ShowErr('服務呼叫失敗,錯誤代碼' + xhr.status);
+                    }                    
+                }
+            });
+
+
+        },
+    };
+})();
+
+
+var UiHelper = (function (MySwal) {
+    return {
+        /**
+         * 取得 QueryString 中參數
+         * @param {any} parameterName 參數名稱
+         * @returns {any} 取得的參數值
+         */
+        GetUrlParameter: function (parameterName) {
+            var result = null,
+                tmp = [];
+            var items = location.search.substr(1).split("&");
+            for (let x of items) {
+                tmp = x.split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+            }
+            return result;
+        },
+        /**
+         * 檔案上傳前端JS判讀
+         * @param {any} file 上傳物件
+         * @param {any} callfn 檔案取完成 call back 函數
+         */
+        GetFile: function (file, callfn) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var f = {
+                    name: file.name,
+                    size: file.size,
+                    body: e.target.result.split(',')[1],
+                    mimetype: e.target.result.split(';')[0].split(':')[1]
+                };
+                if (callfn) callfn(f);
+            };
+            reader.readAsDataURL(file);
+        },
+        /**
+         * 遮罩目前操作畫面
+         * @param {any} _msg 自訂遮罩時使用文字
+         */
+        blockUI: function (_msg) {
+            this.blockSwal = MySwal.fire({
+                icon: 'info',
+                title: _msg || "處理中，請稍後...",
+                backdrop: true,
+                showConfirmButton: false,
+                didOpen: function () {
+                    Swal.showLoading();
+                },
+                didDestroy: function () {
+                    Swal.hideLoading();
+                }
+            });
+        },
+        /** 關閉畫面遮罩 */
+        unblockUI: function () {
+            if (this.blockSwal) {
+                this.blockSwal.close();
+            }
+        },
+        /** 清空全部浮動訊息 
+         * @returns {any} UiHelper
+         */
+        ClearMsg: function () {
+            return this;
+        },
+        /**
+         * 產生錯誤訊息提示
+         * @param {any} Mesages 訊息內容
+         * @param {any} wait 訊息停留秒數
+         */
+        ShowErr: function (Mesages, wait) {
+            if (typeof wait === "undefined") wait = 10;
+            var _msg = "";
+            if (typeof Mesages === "string") {
+                _msg = Mesages;
+            } else if (Mesages && Mesages.length > 0) {
+                _msg = "<ul style='padding-left:1em;'><li>" + Mesages.join("</li><li>") + "</li></ul>";
+            }
+            if (!_msg) return;
+            MySwal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                html: _msg,
+                showConfirmButton: false,
+                showCloseButton: true,
+                timerProgressBar: true,
+                toast: true,
+                timer: wait * 1000
+            });
+        },
+        /**
+         * 顯示一般提示訊息
+         * @param {any} Mesages 訊息內容
+         * @param {any} wait 訊息停留秒數
+         */
+        ShowMsg: function (Mesages, wait) {
+            if (typeof wait === "undefined") wait = 3;
+            var _msg = "";
+            if (typeof Mesages === "string") {
+                _msg = Mesages;
+            } else if (Mesages && Mesages.length > 0) {
+                _msg = "<ul style='padding-left:1em;'><li>" + Mesages.join("</li><li>") + "</li></ul>";
+            }
+            if (!_msg) return;
+
+            MySwal.fire({
+                position: 'top-end',
+                icon: 'success',
+                html: _msg,
+                showConfirmButton: false,
+                showCloseButton: true,
+                timerProgressBar: true,
+                toast: true,
+                timer: wait * 1000
+            });
+        },
+        /**
+         * alert 訊息
+         * @param {any} Mesages 訊息內容
+         * @param {any} func callback function
+         */
+        alert: function (Mesages, func) {
+            MySwal.fire({
+                icon: 'info',
+                html: Mesages,
+                showConfirmButton: true,
+                confirmButtonColor: "#2351e8"
+            }).then((result) => {
+                if (result.isConfirmed && func) {
+                    func();
+                }
+            });
+        },
+        /**
+         * 確認提示
+         * @param {any} message 提示訊息
+         * @param {any} onok 確認時處理事件
+         * @param {any} oncancel 取消時處理事件
+         */
+        confirm: function (message, onok, oncancel) {
+            MySwal.fire({
+                icon: 'warning',
+                html: message,
+                showConfirmButton: true,
+                showCancelButton: true
+            }).then((result) => {
+                if (result.isConfirmed && onok) {
+                    onok();
+                }
+                if (result.isDismissed && oncancel) {
+                    oncancel();
+                }
+            });
+        }
+    };
+})(Swal.mixin({
+    title: '提示訊息',
+    closeButtonAriaLabel: '關閉訊息',
+    confirmButtonText: '確認',
+    confirmButtonAriaLabel: '確認',
+    denyButtonText: '拒絕',
+    denyButtonAriaLabel: '拒絕',
+    cancelButtonText: '取消',
+    cancelButtonAriaLabel: '取消'
+}));
